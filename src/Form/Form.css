@@ -1,0 +1,15 @@
+form {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-item {
+    width: 150px;
+    margin:40px
+}
+
+.form-submit {
+    background-color: teal;
+    color:white;
+}

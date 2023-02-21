@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './Form.css'
 class Form extends Component{
     constructor(){
         super()
@@ -23,19 +23,15 @@ class Form extends Component{
     render(){
         return(
             <form>
-                <label for="name"> Name: </label>
-                <input type="text" name="name" value={this.state.name} placeholder="name" onChange={(event) => this.handleChange(event)} ></input>
+                <input className="form-item" type="text" name="name" value={this.state.name} placeholder="name" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="date">Date: </label>
-                <input type="date" name="date" value={this.state.date} placeholder="date" onChange={(event) => this.handleChange(event)} ></input>
+                <input className="form-item" type="date" name="date" value={this.state.date} placeholder="date" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="time">Time: </label>
-                <input type="text" name="time" value={this.state.time} placeholder="time" onChange={(event) => this.handleChange(event)} ></input>
+                <input className="form-item" type="text" name="time" value={this.state.time} placeholder="time" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="guests">Guests: </label>
-                <input type="number" name="number" value={this.state.number} placeholder="number of guests" onChange={(event) => this.handleChange(event)} ></input>
+                <input className="form-item" type="number" name="number" value={this.state.number} placeholder="number of guests" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <button onClick={this.handleSubmit}>submit</button>
+                <button className="form-item form-submit" onClick={this.handleSubmit}>submit</button>
             </form>
         )
     }
