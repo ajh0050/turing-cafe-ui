@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Card from '../Card/Card'
 
 class Reservations extends Component {
     constructor() {
         super()
-        this.State = {
+        this.state = {
             reservations: []
         }
     }
@@ -16,10 +17,35 @@ class Reservations extends Component {
             })
         })
     }
+    createReservations() {
+        console.log("createReservations ran")
+        let reservationCards = this.state.reservations.map(resy => 
+                <Card 
+                name={resy.name}
+                date={resy.name}
+                time={resy.time}
+                guests={resy.number}
+                />
+            
+        )
+        return reservationCards
+    }
+
     render() {
+        // let reservationCards = this.State.reservations.map(resy => {
+        //     console.log('we hit the map')
+        //     return (
+        //         <Card 
+        //         name={resy.name}
+        //         date={resy.name}
+        //         time={resy.time}
+        //         guests={resy.number}
+        //         />
+        //     )
+        // })
         return (
         <div className='Reservations-container'>
-            <h1>Reservations container</h1>
+            {this.createReservations()}
         </div>)
     }
 }
