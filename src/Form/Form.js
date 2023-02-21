@@ -7,13 +7,18 @@ class Form extends Component{
             name:"",
             date:"",
             time:"",
-            guests:0,
+            number:"",
         }
     }
     handleChange = (event) => {
+        console.log(event.target.value,'e.t.v', typeof event.target.value)
         this.setState({
             [event.target.name] : event.target.value
         })
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addReservation(this.state)
     }
     render(){
         return(
@@ -28,9 +33,9 @@ class Form extends Component{
                 <input type="text" name="time" value={this.state.time} placeholder="time" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
                 <label for="guests">Guests: </label>
-                <input type="number" name="guests" value={this.state.guests} placeholder="number of guests" onChange={(event) => this.handleChange(event)} ></input>
+                <input type="number" name="number" value={this.state.number} placeholder="number of guests" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <button>submit</button>
+                <button onClick={this.handleSubmit}>submit</button>
             </form>
         )
     }

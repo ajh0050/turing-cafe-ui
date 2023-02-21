@@ -5,9 +5,6 @@ import './Reservations.css'
 class Reservations extends Component {
     constructor() {
         super()
-        // this.state = {
-        //     reservations: []
-        // }
     }
 
     createReservations() {
@@ -18,7 +15,7 @@ class Reservations extends Component {
                 name={resy.name}
                 date={resy.date}
                 time={resy.time}
-                guests={resy.number}
+                number={resy.number}
                 />
             
         )
@@ -26,17 +23,6 @@ class Reservations extends Component {
     }
 
     render() {
-        // let reservationCards = this.State.reservations.map(resy => {
-        //     console.log('we hit the map')
-        //     return (
-        //         <Card 
-        //         name={resy.name}
-        //         date={resy.name}
-        //         time={resy.time}
-        //         guests={resy.number}
-        //         />
-        //     )
-        // })
         return (
         <div className='reservations-container'>
             {this.createReservations()}
