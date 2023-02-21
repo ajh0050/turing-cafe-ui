@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../Card/Card'
+import './Reservations.css'
 
 class Reservations extends Component {
     constructor() {
@@ -22,7 +23,7 @@ class Reservations extends Component {
         let reservationCards = this.state.reservations.map(resy => 
                 <Card 
                 name={resy.name}
-                date={resy.name}
+                date={resy.date}
                 time={resy.time}
                 guests={resy.number}
                 />
@@ -44,7 +45,7 @@ class Reservations extends Component {
         //     )
         // })
         return (
-        <div className='Reservations-container'>
+        <div className='reservations-container'>
             {this.createReservations()}
         </div>)
     }

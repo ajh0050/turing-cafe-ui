@@ -1,0 +1,19 @@
+.card {
+    box-sizing: border-box;
+    width:200px;
+    height: 150px;
+    border: solid 2px green;
+    margin: 20px;
+    background-color:white;
+}
+
+.card-info{
+    margin: 5px;
+    color:teal
+}
+
+.cancel-button {
+    width:80%;
+    background-color: teal;
+    color:white 
+}
