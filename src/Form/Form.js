@@ -10,23 +10,25 @@ class Form extends Component{
             guests:0,
         }
     }
-    onChange = (event) => {
-        
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name] : event.target.value
+        })
     }
     render(){
         return(
             <form>
-                <label for="name">Name: </label>
-                <input type="text" placeholder="name" ></input>
+                <label for="name"> Name: </label>
+                <input type="text" name="name" value={this.state.name} placeholder="name" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="date">Name: </label>
-                <input type="text" placeholder="date" ></input>
+                <label for="date">Date: </label>
+                <input type="date" name="date" value={this.state.date} placeholder="date" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="time">Name: </label>
-                <input type="text" placeholder="time" ></input>
+                <label for="time">Time: </label>
+                <input type="text" name="time" value={this.state.time} placeholder="time" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
-                <label for="guests">Name: </label>
-                <input type="number" placeholder="number of guests" ></input>
+                <label for="guests">Guests: </label>
+                <input type="number" name="guests" value={this.state.guests} placeholder="number of guests" onChange={(event) => this.handleChange(event)} ></input>
                 <br />
                 <button>submit</button>
             </form>
